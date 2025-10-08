@@ -11,7 +11,7 @@ public class KafkaConsumer {
         System.out.println("Received Message in 1st consumer: "+ message);
     }
 
-    @KafkaListener(topics = "my-topic" , groupId = "my-new-group")
+    @KafkaListener(topics = "my-topic" , groupId = "my-new-group-1")
     public void listen2(String message){
         System.out.println("Received Message in 2nd consumer: "+ message);
     }
