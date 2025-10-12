@@ -131,3 +131,9 @@ Received message: Hello Kafka!
 
 This project serves as a **beginner-friendly example** of integrating **Spring Boot** with **Apache Kafka** for **real-time, event-driven communication**.
 It also demonstrates how to **run Kafka and Zookeeper using Docker**, making setup quick, clean, and portable.
+
+## 📨 Passing String message
+
+<img width="1382" height="602" alt="kafka1" src="https://github.com/user-attachments/assets/e785e954-a905-4dbb-9951-a5f73815501d" />
+
+<img width="1920" height="1020" alt="kafka consumer " src="https://github.com/user-attachments/assets/5ee49d3a-36cf-4ac7-8d2b-604d80d1f92e" />
