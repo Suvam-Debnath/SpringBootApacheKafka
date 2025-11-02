@@ -144,3 +144,57 @@ It also demonstrates how to **run Kafka and Zookeeper using Docker**, making set
 <img width="1755" height="673" alt="kafka porducer send object message" src="https://github.com/user-attachments/assets/1d8ebb8a-2f93-47fb-bd69-077510758869" />
 
 <img width="1920" height="1020" alt="kafka consumer object message " src="https://github.com/user-attachments/assets/641c06e5-ab30-4483-b7f7-682060023e71" />
+
+<!-- Kafka CLI Commands (Click-to-Copy Section) -->
+<div align="center">
+  <h2>🧠 Apache Kafka CLI Commands (Docker + Localhost Setup)</h2>
+  <button onclick="navigator.clipboard.writeText(document.getElementById('kafkaCommands').innerText)">📋 Copy All Commands</button>
+</div>
+
+<pre id="kafkaCommands">
+
+🚀 Step 1: Access Kafka Container
+docker exec -it <container_id> bash
+# Example:
+docker exec -it 955553f3ab2a bash
+
+
+🧩 Step 2: Create a Kafka Topic
+kafka-topics --create \
+  --topic my-topic \
+  --bootstrap-server localhost:9092 \
+  --partitions 3 \
+  --replication-factor 1
+# Output:
+# Created topic my-topic.
+
+
+📋 Step 3: List All Topics
+kafka-topics --list --bootstrap-server localhost:9092
+# Example Output:
+# my-topic
+# txn-initiated
+
+
+🔍 Step 4: Describe a Topic
+kafka-topics --describe --topic my-topic --bootstrap-server localhost:9092
+# Example Output:
+# Topic: my-topic  PartitionCount: 3  ReplicationFactor: 1
+# Partition 0 -> Leader:1, Replicas:1, Isr:1
+
+
+✏️ Step 5: Start Kafka Producer (Send Messages)
+kafka-console-producer --topic my-topic --bootstrap-server localhost:9092
+# Type messages:
+# hello kafka
+# this is first message on live producer input mode
+
+
+📥 Step 6: Start Kafka Consumer (Read Messages)
+kafka-console-consumer --topic my-topic --bootstrap-server localhost:9092 --from-beginning
+# Example Output:
+# hello kafka
+# this is first message on live producer input mode
+
+</pre>
+
