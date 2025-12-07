@@ -16,7 +16,14 @@ public class KafkaProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
+    // sending string message
+//    @PostMapping("/send")
+//    public String sendMessage(@RequestParam String message){
+//        kafkaTemplate.send("my-topic",message);
+//        return "Message sent: "+message;
+//    }
 
+    // sending Objects messages by Serializing and Deserializing
     @PostMapping("/send")
     public String sendMessage(@RequestParam String message){
         RiderLocation location = new RiderLocation("rider123",36.21,77.12);

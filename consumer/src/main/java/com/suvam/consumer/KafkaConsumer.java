@@ -6,11 +6,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaConsumer {
 
+    // setting up multiple consumer
     @KafkaListener(topics = "my-topic" , groupId = "my-new-group")
     public void listen1(String message){
         System.out.println("Received Message in 1st consumer: "+ message);
     }
 
+    // setting multiple consumer with different groupid
     @KafkaListener(topics = "my-topic" , groupId = "my-new-group-1")
     public void listen2(String message){
         System.out.println("Received Message in 2nd consumer: "+ message);
